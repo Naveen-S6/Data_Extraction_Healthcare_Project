@@ -6,43 +6,25 @@ class PerscriptionParsr(MedicalDocumentParser):
 
     def parse(self):
         return {
-            'patient_name':self.get_name(),
-            'patient_address':self.get_address(),
-            'medicine':self.get_medicine(),
-            'directions':self.get_direction(),
-            'refill':self.get_refill()
+            'patient_name':self.get_filed('patient_name'),
+            'patient_address':self.get_filed('patient_address'),
+            'medicine':self.get_filed('medicine'),
+            'directions':self.get_filed('directions'),
+            'refill':self.get_filed('refill')
         }
-
-    def get_name(self):
-        pattern = "Name:(.*)Date"
-        matches = re.findall(pattern, self.text)
-        if len(matches)>0:
-            return matches[0].strip()
-
-    def get_address(self):
-        pattern = "Address:(.*)\n"
-        matches = re.findall(pattern, self.text)
-        if len(matches)>0:
-            return matches[0].strip()
-
-    def get_medicine(self):
-        pattern = "Address:[^\n]*(.*)Directions"
-        matches = re.findall(pattern, self.text, flags = re.DOTALL)
-        if len(matches)>0:
-            return matches[0].strip()
-
-    def get_direction(self):
-        pattern = "Directions:(.*)Refill"
-        matches = re.findall(pattern, self.text, flags = re.DOTALL)
-        if len(matches)>0:
-            return matches[0].strip()
-
-    def get_refill(self):
-        pattern = "Refill:.*(\d+).times"
-        matches = re.findall(pattern, self.text)
-        if len(matches)>0:
-            return matches[0].strip()
-
+    def get_filed(self, filed_name):
+        pattern_dic ={
+            "patient_name":{'pattern': 'Name:(.*)Date', 'flags':0},
+            "patient_address": {'pattern': 'Address:(.*)\n', 'flags': 0},
+            "medicine": {'pattern': 'Address:[^\n]*(.*)Directions', 'flags': re.DOTALL},
+            "directions": {'pattern': 'Directions:(.*)Refill', 'flags': re.DOTALL},
+            "refill": {'pattern': 'Refill:.*(\d+).times', 'flags': 0},
+        }
+        pattern_object = pattern_dic[filed_name]
+        if pattern_object:
+            matches = re.findall(pattern_object['pattern'], self.text, flags=pattern_object["flags"])
+            if len(matches) > 0:
+                return matches[0].strip()
 
 
 if __name__ == "__main__":
