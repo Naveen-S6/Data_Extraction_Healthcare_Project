@@ -1,6 +1,6 @@
-from parser_generic import MedicalDocumentParser
+from Backend.src.parser_generic import MedicalDocumentParser
 import re
-class PerscriptionParsr(MedicalDocumentParser):
+class PerscriptionParser(MedicalDocumentParser):
     def __init__(self, text):
         MedicalDocumentParser.__init__(self, text)
 
@@ -42,5 +42,5 @@ Address: 2 cricket blvd, New Delhi
 Directions: Use two tablets daily for three months
 
 Refill: 3 times'''
-    pp = PerscriptionParsr(text)
+    pp = PerscriptionParser(text)
     print(pp.parse())
