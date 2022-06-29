@@ -23,7 +23,7 @@ class PerscriptionParser(MedicalDocumentParser):
         pattern_object = pattern_dic[filed_name]
         if pattern_object:
             matches = re.findall(pattern_object['pattern'], self.text, flags=pattern_object["flags"])
-            if len(matches) > 0:
+            if matches:
                 return matches[0].strip()
 
 
