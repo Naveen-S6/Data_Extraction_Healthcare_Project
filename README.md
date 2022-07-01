@@ -1,5 +1,9 @@
 # OCR based Medical Data Extraction Project
 
+I made this project by following codebasics python course, the link for the course is below. If you are interested checkout the link.
+
+[Codebasics Python course](https://codebasics.io/courses/python-for-beginner-and-intermediate-learners)
+
 ## Problem statement
 
 There are a lot of procedures needs to followed by the health insurance companies as per the government regulation to issue the claims, for that the insurance company has to process the images of patient details and prescription sent by hospitals or induvial doctors and extract useful data from them. For these process, the most insurance companies outsource workforce from companies like “Mr. X data Analytics” to extract the information from images manually. 
@@ -56,7 +60,7 @@ Lialda 2.4 gram
 
 or 1 month
 ```
-
+---
 ### Image processing
 
 we decided to preprocess the image using opencv module, before extracting data from them. For that we have first used normal thresholding and checked, which resulted in below image
@@ -93,17 +97,19 @@ Prednisone, Taper 5 mg every 3 days,
 Finish in 2.5 weeks a
 Lialda - take 2 pill everyday for 1 month
 ```
-
+---
 ### Notebook
 
 For all these above trials, used jupyter books and developed the small bits of the functionalities., which can be used later while designing the class.
 
 [Notebooks](https://github.com/Naveen-S6/Data_Extraction_Healthcare_Project/tree/main/Backend/Notebooks)
 
+---
 ### OOPS design
 
 The code was written in using OOPs concepts for extracting the medical data from prescription and patient details documents.
 
+---
 ### Regular expression
 
 using regular expression module we can match the patterns and extract the data we want from the files. For this project, 
@@ -112,13 +118,14 @@ Before writing the python code, It is advisable to practise and match the patter
 
 [regex101](https://regex101.com/)
 
+---
 ### Test driven Development
 
 In this project test driven development methodology was used to develop the code. For testing pytest module was used. 
 For all the methods and final result the test cases was designed and checked simultaneously while developing the code.
 
 
-
+---
 ### FastApi
 
 Used FastAPI for hosting the server of the project. FastApi, as name suggest is help us to develop fast and some other advantages are,
@@ -127,11 +134,14 @@ Used FastAPI for hosting the server of the project. FastApi, as name suggest is 
 - In build Documentation
 - Fast running and performance
 
+---
 ### Postman
 
 As it is a backend project, not developed frontend part. For checking how the server responds for http requests, used postman to trigger http requests and tested the outcome.
 
+<img src="https://github.com/Naveen-S6/Data_Extraction_Healthcare_Project/blob/main/Backend/Notebooks/postman.png" width="400" class="center">
 
+---
 ## Result
 
 This backend functionality can be integrated into the Mr.X Analytics existing software and data can be extracted automatically. 
