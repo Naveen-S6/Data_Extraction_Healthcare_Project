@@ -65,7 +65,7 @@ or 1 month
 
 we decided to preprocess the image using opencv module, before extracting data from them. For that we have first used normal thresholding and checked, which resulted in below image
 
-<img src="https://github.com/Naveen-S6/Data_Extraction_Healthcare_Project/blob/main/Backend/Notebooks/filter_dark.jpg" width="450" class="center">
+<img src="https://github.com/Naveen-S6/Data_Extraction_Healthcare_Project/blob/main/Backend/Notebooks/filter_dark.jpg" width="350" class="center">
 
 
 So, if there is any shadow or some noise, the normal thresholding fade out the area. which will result in loss of data. 
@@ -139,7 +139,7 @@ Used FastAPI for hosting the server of the project. FastApi, as name suggest is 
 
 As it is a backend project, not developed frontend part. For checking how the server responds for http requests, used postman to trigger http requests and tested the outcome.
 
-<img src="https://github.com/Naveen-S6/Data_Extraction_Healthcare_Project/blob/main/Backend/Notebooks/postman.png" width="400" class="center">
+<img src="https://github.com/Naveen-S6/Data_Extraction_Healthcare_Project/blob/main/Backend/Notebooks/postman.png" width="600" class="center">
 
 ---
 ## Result
