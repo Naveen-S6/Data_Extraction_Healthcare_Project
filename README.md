@@ -27,17 +27,17 @@ Here, we are using the Python programming language and pytesseract google librar
 
 ## Workflow
 
-#### PDF to Image
+### PDF to Image
 
 For converting PDF to image, we have used pdf2image library.
 
-#### Without preprocessing extracting data
+### Without preprocessing extracting data
 
 Tried extracting data from source files without any processing, as they are not in proper format to be extracted, the extracted data was not as expected.
 
 <img src="https://github.com/Naveen-S6/Data_Extraction_Healthcare_Project/blob/main/Backend/Notebooks/dark_image.jpg" width="350" class="center">
 
-#### Extracted data from the above image
+### Extracted data from the above image
 ```commandline
 Dr John Smith, M.D
 2 Non-Important Street,
@@ -57,21 +57,21 @@ Lialda 2.4 gram
 or 1 month
 ```
 
-#### Image processing
+### Image processing
 
 we decided to preprocess the image using opencv module, before extracting data from them. For that we have first used normal thresholding and checked, which resulted in below image
 
 <img src="https://github.com/Naveen-S6/Data_Extraction_Healthcare_Project/blob/main/Backend/Notebooks/filter_dark.jpg" width="450" class="center">
 
 
-So, if there is any shadow are some noise, the normal thresholding fade out the area. which will result in loss of data. 
+So, if there is any shadow or some noise, the normal thresholding fade out the area. which will result in loss of data. 
 
 In the search of better approach of this problem, we have decided to use adaptive thresholding technique. In this technique, the image will be divided into sub image and the thresholding value will be different for all sub regions.
 And the end result of adaptive thresholding is much better compared to normal thresholding.
 
 <img src="https://github.com/Naveen-S6/Data_Extraction_Healthcare_Project/blob/main/Backend/Notebooks/adaptive_filter_dark.jpg" width="350" class='center'>
 
-#### After preprocessing the image data extraction
+### After preprocessing the image data extraction
 
 ```commandline
 Dr John Smith, M.D
@@ -94,6 +94,12 @@ Finish in 2.5 weeks a
 Lialda - take 2 pill everyday for 1 month
 ```
 
+### Notebook
+
+For all these above trials, used jupyter books and developed the small bits of the functionalities., which can be used later while designing the class.
+
+[Notebooks](https://github.com/Naveen-S6/Data_Extraction_Healthcare_Project/tree/main/Backend/Notebooks)
+
 ### OOPS design
 
 The code was written in using OOPs concepts for extracting the medical data from prescription and patient details documents.
@@ -101,8 +107,10 @@ The code was written in using OOPs concepts for extracting the medical data from
 ### Regular expression
 
 using regular expression module we can match the patterns and extract the data we want from the files. For this project, 
-analyst the medical files and as fact all the medical documents will follow same pattern, we wrote patterns that match only the required data. 
+analyst the medical files and as fact all the medical documents will follow same pattern, we wrote patterns that match only the required data.
+Before writing the python code, It is advisable to practise and match the patterns in regex 101 website.
 
+[regex101](https://regex101.com/)
 
 ### Test driven Development
 
@@ -124,3 +132,13 @@ Used FastAPI for hosting the server of the project. FastApi, as name suggest is 
 As it is a backend project, not developed frontend part. For checking how the server responds for http requests, used postman to trigger http requests and tested the outcome.
 
 
+## Result
+
+This backend functionality can be integrated into the Mr.X Analytics existing software and data can be extracted automatically. 
+The extracted data may have some errors, the person who is performing the work has to correct it and submit the response.
+
+### Benefits
+
+- Mr.X Analytics can save at least of 30 secs for each document. It is small amount of time when looking for one document, but cumulatively it can save a tremendous amount of time which can help the company to complete more documents within the given time and make more profit
+- The company doesn't have to hire extra people in the season time.
+- As it is a combination of automation and manual the error will be very much low.
