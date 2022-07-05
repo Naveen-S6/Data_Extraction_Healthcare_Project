@@ -31,7 +31,7 @@ Here, we are using the Python programming language and pytesseract google librar
 
 ## Workflow
 
-<img src="https://github.com/Naveen-S6/Data_Extraction_Healthcare_Project/blob/main/Backend/Notebooks/workflow.jpg" width="450" class = "center">
+<img src="https://github.com/Naveen-S6/Data_Extraction_Healthcare_Project/blob/main/Backend/Notebooks/workflow.jpg" class = "center">
 
 ### PDF to Image
 
